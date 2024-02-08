@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+
+import '../../../core/utils/app_color.dart';
+import '../../../core/utils/app_strings.dart';
+
+class ButtonOfDeleteTask extends StatelessWidget {
+  const ButtonOfDeleteTask({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 100,
+        right: 10,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ///cancel task priority
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 14,
+              bottom: 13,
+            ),
+            child: InkWell(
+              splashFactory: NoSplash.splashFactory,
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Text(
+                "Cancel",
+                style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: AppStrings.fontFamily,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff8687E7)),
+              ),
+            ),
+          ),
+
+          ///delete button
+          MaterialButton(
+            elevation: 0,
+            color: const Color(0xff8687E7),
+            onPressed: () {},
+            child: const Text(
+              "Delete",
+              style: TextStyle(
+                  color: AppColor.white,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: AppStrings.fontFamily,
+                  fontSize: 16),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
